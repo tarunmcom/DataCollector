@@ -1,7 +1,7 @@
 # DataCollector
 Use this to capture images and label them same time for deep learning training.
 
-**IMPORTANT **I created this for my weekend project. There is no guarantee of the code or the application. Use at your own risk.****
+**IMPORTANT:-> **I created this for my weekend project. There is no guarantee of the code or the application. Use at your own risk.****
 
 I have done some basic testing on **Windows 10**
 Required Python modules to compile the source code:- opencv-python, winsound, PyQt6
