@@ -9,7 +9,7 @@ Download the Application exe for Windows 10:- https://drive.google.com/file/d/1M
 Steps to run the exe:-
 1. Download and unzip https://drive.google.com/file/d/1MFhXgZaM0uATyzMuAOibn2Oo8mkR79Tk/view?usp=sharing, 
 2. Put the camera id in CameraSource.config , if you dont know id try numbers like:- 0, 1 , 2 ... (just any one number)
-3. Run the exe application, (It may take some when you start for first time and when you capture first image)
+3. Run the exe application, (It may take some time when you start for first time and when you capture first image)
 
 Demo Video:- https://drive.google.com/file/d/1xD1afWUUvY31kBbIqtw5oX5cUXjE0S84/view?usp=sharing
 
