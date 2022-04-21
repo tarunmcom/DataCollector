@@ -3,7 +3,8 @@ from log import logger
 class Camera:
     def __init__(self):
         file = open("./CameraSource.config", "r")
-        sr = file.read()
+        sr = file.readline().strip()
+        self.displayres_res = float(file.readline().strip())
         if len(sr)==1:
             self.source = int(sr)
         else:
@@ -13,11 +14,12 @@ class Camera:
 
     def setup(self):
         try:
-            self.cam = cv2.VideoCapture(self.source)
+            self.cam = cv2.VideoCapture()
+            self.cam.open(self.source, cv2.CAP_DSHOW)
             if self.cam is None or not self.cam.isOpened():
                 logger.error("no camera at "+self.source)
-            self.cam.set(3, 3840)
-            self.cam.set(4, 2160)
+            self.cam.set(3, 1920)
+            self.cam.set(4, 1080)
         except Exception as e:
             logger.error("Camera could not open :"+str(e))
 

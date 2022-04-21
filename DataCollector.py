@@ -193,7 +193,11 @@ class Ui_MainWindow(object):
             return
         if self.image is not None:
             try:
-                self.qimage = QtGui.QImage(self.image.data, self.image.shape[1], self.image.shape[0], QtGui.QImage.Format.Format_RGB888).rgbSwapped()
+                width = int(self.image.shape[1] * self.camera.displayres_res)
+                height = int(self.image.shape[0] * self.camera.displayres_res)
+                dim = (width, height)
+                display_image = cv2.resize(self.image.copy(), dim)
+                self.qimage = QtGui.QImage(display_image.data, display_image.shape[1], display_image.shape[0], QtGui.QImage.Format.Format_RGB888).rgbSwapped()
                 self.labelImage.setPixmap(QtGui.QPixmap.fromImage(self.qimage))
                 selected_class = self.combo_Class.currentText()
                 self.image_count, self.last_img_path = self.image_manager.save_image(self.image,selected_class)
@@ -209,9 +213,16 @@ class Ui_MainWindow(object):
 
 if __name__ == "__main__":
     import sys
+    print("1")
     app = QtWidgets.QApplication(sys.argv)
+    print("2")
     MainWindow = QtWidgets.QMainWindow()
+    print("3")
     ui = Ui_MainWindow()
+    print("4")
     ui.setupUi(MainWindow)
+    print("5")
     MainWindow.showMaximized()
+    print("6")
     sys.exit(app.exec())
+    print("7")
