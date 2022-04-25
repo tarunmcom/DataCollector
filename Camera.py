@@ -20,8 +20,10 @@ class Camera:
                 logger.error("no camera at "+self.source)
             self.cam.set(3, 1920)
             self.cam.set(4, 1080)
+            return True
         except Exception as e:
             logger.error("Camera could not open :"+str(e))
+            return False
 
 
     def CaptureImage(self):

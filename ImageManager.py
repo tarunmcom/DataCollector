@@ -20,11 +20,15 @@ class ImageManager:
         return self.imagecount, len(image_paths)-self.imagecount
 
     def save_image(self, cvimage, classname):
-        self.counter = self.counter + 1
-        now = datetime.now()
-        date_time = now.strftime("%m-%d-%Y-%H-%M-%S")
-        filename = str(self.counter)+classname+"_"+date_time+str(random.randint(0,99999))+".png"
-        fullpath = self.folder+"/"+filename
-        print(fullpath)
-        cv2.imwrite(fullpath,cvimage)
-        return self.counter, fullpath
+        try:
+            now = datetime.now()
+            date_time = now.strftime("%m-%d-%Y-%H-%M-%S")
+            filename = str(self.counter)+classname+"_"+date_time+str(random.randint(0,99999))+".png"
+            fullpath = self.folder+"/"+filename
+            print(fullpath)
+            cv2.imwrite(fullpath,cvimage)
+            self.counter = self.counter + 1
+            return self.counter, fullpath
+        except Exception as e:
+            print("error in save_image:", e)
+            return None

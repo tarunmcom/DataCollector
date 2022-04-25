@@ -41,6 +41,14 @@ class Ui_form_addClass(object):
         self.label_help.setStyleSheet("color: rgb(10, 10, 250);")
         self.label_help.setObjectName("label_help")
 
+        self.label_hint = QtWidgets.QLabel(form_addClass)
+        self.label_hint.setGeometry(QtCore.QRect(10, 34, 371, 21))
+        font = QtGui.QFont()
+        font.setPointSize(9)
+        self.label_hint.setFont(font)
+        self.label_hint.setStyleSheet("color: rgb(0, 0, 0);")
+        self.label_hint.setObjectName("label_hint")
+
         self.retranslateUi(form_addClass)
         QtCore.QMetaObject.connectSlotsByName(form_addClass)
         #################### our code
@@ -75,6 +83,7 @@ class Ui_form_addClass(object):
         self.label_newclass.setText(_translate("form_addClass", "New Class:"))
         self.btn_add.setText(_translate("form_addClass", "Add"))
         self.label_help.setText(_translate("form_addClass", "Add multiple classes separeted by comma"))
+        self.label_hint.setText(_translate("form_addClass", "classes with special characters in them, will be ignored"))
 
 
 # if __name__ == "__main__":

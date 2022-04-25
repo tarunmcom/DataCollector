@@ -1,4 +1,14 @@
 import os.path
+import re
+
+
+def areThereSpecialChars(value):
+    regex = re.compile('[@!#$%^&*()<>?/\|}{~:]')
+    if (regex.search(value) == None):
+        return False
+
+    else:
+        return True
 
 
 class Manager:
@@ -25,6 +35,8 @@ class Manager:
             classes = [m.strip().title() for m in classes]
             filew = open(self.filename,'a')
             for cls in classes:
+                if areThereSpecialChars(cls)==True:
+                    continue
                 spccount = cls.count(' ')
                 tbcount = cls.count('\t')
                 length = len(cls)

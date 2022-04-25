@@ -189,7 +189,11 @@ class Ui_MainWindow(object):
             QtGui.QImage.Format.Format_RGB888).rgbSwapped()
             self.labelImage.setPixmap(QtGui.QPixmap.fromImage(self.qimage))
             logger.error("Could not capture image")
-            self.show_message("Could not capture image. Please check if camera is connected @ code:"+str(self.camera.source)+"\n Please modify first line of CameraSource.config with correct camera code (or source string) if this code is wrong", "No Image")
+            self.show_message("Could not capture image. This app will try to restart the camera after you click ok, please make sure camera is connected @ code: "+str(self.camera.source)+"\n Please modify first line of CameraSource.config with correct camera code (or source string) if this code is wrong.", "No Image")
+            if self.camera.setup()==True:
+                self.show_message("Camera is now connected", "Success")
+            else:
+                self.show_message("Not able to talk to camera. Please check camera is connected", ":(")
             return
         if self.image is not None:
             try:
@@ -208,7 +212,6 @@ class Ui_MainWindow(object):
 
         else:
             logging.error("Image was None")
-
 
 
 if __name__ == "__main__":
