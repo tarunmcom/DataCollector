@@ -5,9 +5,9 @@ Use this to capture images and label them same time for deep learning training.
 
 I have done some basic testing on **Windows 10**,
 Required Python modules to compile the source code:- opencv-python, winsound, PyQt6,
-Download the Application exe for Windows 10:- https://drive.google.com/file/d/1XQUKkO68bQLG3U-3f-XpTUKYua1I2TO6/view?usp=sharing,
+Download the Application exe for Windows 10:- https://drive.google.com/file/d/1vUOaHsnqzdXW2pQn3Hk-6QDAZXsj5r6t/view?usp=sharing,
 Steps to run the exe:-
-1. Download and unzip https://drive.google.com/file/d/1XQUKkO68bQLG3U-3f-XpTUKYua1I2TO6/view?usp=sharing, 
+1. Download and unzip https://drive.google.com/file/d/1vUOaHsnqzdXW2pQn3Hk-6QDAZXsj5r6t/view?usp=sharing, 
 2. Put the camera id in first line of CameraSource.config , if you dont know id try numbers like:- 0, 1 , 2 ... (just any one number)
 3. Run the exe application, (It may take some time when you start for first time and when you capture first image)
 
